@@ -1,0 +1,24 @@
+name: "🐛 Bug"
+description: "버그 수정"
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: "🐞 버그 설명"
+      description: "발생한 버그에 대해 설명해 주세요."
+      placeholder: "어떤 상황에서 어떤 문제가 발생했는지 구체적으로 적어주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "🔁 재현 방법"
+      description: "버그를 재현할 수 있는 절차를 적어주세요."
+      placeholder: "1. 어떤 페이지에 가서...\n2. 무엇을 클릭했을 때...\n3. 어떤 현상이 발생함"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "📸 스크린샷 / 로그"
+      description: "가능하다면 스크린샷이나 콘솔 로그를 첨부해주세요."

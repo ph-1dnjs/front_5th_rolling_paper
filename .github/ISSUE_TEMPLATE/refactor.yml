@@ -1,0 +1,24 @@
+name: "🧹 Refactor"
+description: "리팩토링 작업"
+labels: ["refactor"]
+body:
+  - type: textarea
+    attributes:
+      label: "🧱 리팩토링 대상"
+      description: "리팩토링이 필요한 코드 영역을 작성해 주세요."
+      placeholder: "어떤 파일 또는 컴포넌트에서 리팩토링이 필요한지 명시해 주세요."
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "🎯 리팩토링 목적"
+      description: "리팩토링을 통해 기대하는 개선 효과를 적어주세요."
+      placeholder: "가독성 향상, 성능 개선 등"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "📌 참고 사항"
+      description: "기타 공유해야 할 내용이 있다면 작성해 주세요."

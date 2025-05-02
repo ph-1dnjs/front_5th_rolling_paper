@@ -1,0 +1,17 @@
+name: "🚀 Deploy"
+description: "배포 관련 작업"
+labels: ["deploy"]
+body:
+  - type: textarea
+    attributes:
+      label: "📦 배포 내용"
+      description: "이번 배포에 포함될 기능 또는 수정 사항을 작성해 주세요."
+      placeholder: "- 신규 기능 A\n- 버그 수정 B"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "🔍 체크리스트"
+      description: "배포 전 확인해야 할 사항을 체크박스로 작성해 주세요."
+      placeholder: "- [ ] 버전 태그 확인\n- [ ] env 설정 점검"
