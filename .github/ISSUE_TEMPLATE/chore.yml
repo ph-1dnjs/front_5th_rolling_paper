@@ -1,0 +1,23 @@
+name: "🛠️ Chore"
+description: "개발 환경 설정, 설정 파일 수정 등 잡무"
+labels: ["chore"]
+body:
+  - type: textarea
+    attributes:
+      label: "⚙️ 작업 설명"
+      description: 어떤 설정 작업을 할 건지 설명해주세요.
+      placeholder: "예: ESLint, Prettier 설정 / .gitignore 수정"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: "📁 관련 파일 및 경로"
+      description: 수정 또는 추가될 주요 파일 경로가 있다면 적어주세요.
+      placeholder: "예: /.eslintrc.json, /vite.config.ts"
+
+  - type: textarea
+    attributes:
+      label: "✅ 체크리스트"
+      description: 세팅 완료를 위한 작업들을 체크박스로 정리해 주세요.
+      placeholder: "- [ ] ESLint 설정 추가\n- [ ] Prettier 연동\n- [ ] .env 템플릿 생성"
