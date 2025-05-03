@@ -101,3 +101,9 @@ $RECYCLE.BIN/
 .env
 .env.*
 !.env.example
+
+# Dist folder
+/dist
+
+# Build folder
+/build
