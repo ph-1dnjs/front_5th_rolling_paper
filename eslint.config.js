@@ -113,6 +113,7 @@ export default [
           'newlines-between': 'always',
         },
       ],
+      'import/no-unresolved': ['error', { ignore: ['@tanstack/react-query'] }],
       'import/extensions': 'off',
     },
   },
