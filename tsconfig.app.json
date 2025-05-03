@@ -1,26 +1,49 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "target": "ES6",
+    "lib": ["es2018", "dom", "dom.iterable", "scripthost"],
     "jsx": "react-jsx",
-
-    /* Linting */
+    "rootDir": "./",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": "./",
+    // 경로 별칭 설정
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"]
+    },
+    "outDir": "./build",
+    // CommonJS 모듈을 ES 모듈처럼 사용 가능하게 함
+    "esModuleInterop": true,
+    // 파일 이름의 대소문자 일관성 강제
+    "forceConsistentCasingInFileNames": true,
+    // JavaScript 파일 컴파일 허용
+    "allowJs": true,
+    // JavaScript 파일의 타입 체크 활성화
+    "checkJs": true,
+    // 컴파일된 파일 생성하지 않음 (Vite가 처리)
+    "noEmit": true,
+    // 소스맵 생성
+    "sourceMap": true,
+    // 컴파일된 출력에서 주석 제거
+    "removeComments": true,
+    // 타입 정의 파일(.d.ts) 생성
+    "declaration": true,
+    // 모든 엄격한 타입-체킹 옵션 활성화
     "strict": true,
+    // 사용하지 않는 지역 변수 체크
     "noUnusedLocals": true,
+    // 사용하지 않는 매개변수 체크
     "noUnusedParameters": true,
+    // 함수의 모든 코드 경로가 값을 반환하는지 체크
+    "noImplicitReturns": true,
+    // switch문에서 fallthrough 케이스 체크
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    // node_modules의 타입 체크 스킵
+    "skipLibCheck": true,
+    // .ts 확장자 import 비활성화 (Vite가 처리)
+    "allowImportingTsExtensions": false
   },
-  "include": ["src"]
+  "include": ["src/**/*", "*.ts", "*.tsx", "vite.config.ts", "src/vite-env.d.ts"],
+  "exclude": ["node_modules", "build", "dist", "coverage"]
 }
