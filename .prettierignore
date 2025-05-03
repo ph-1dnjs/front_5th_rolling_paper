@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+.cache
+*.lock
+
+README.md
+.github
