@@ -1,19 +1,55 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-white: #ffffff;
-  --color-gray0: #fcfcfc;
-  --color-gray1: #e3e3e3;
-  --color-gray2: #c9c9c9;
-  --color-gray3: #b0b0b0;
-  --color-gray4: #969696;
-  --color-gray5: #7d7d7d;
-  --color-gray6: #636363;
-  --color-gray7: #4a4a4a;
-  --color-gray8: #303030;
-  --color-gray9: #171717;
-  --color-black: #000000;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-azure-11: #0F1729;
+    --color-azure-34: #485563;
+    --color-azure-36: #1B5A9B;
+    --color-azure-47: #647A8B;
+    --color-azure-61: #4F9BE9;
+    --color-azure-82: #A1D6FF;
+    --color-azure-88: #C1E3FF;
+
+    --color-grey-46: #66728D;
+    --color-grey-91: #E2E8FD;
+    --color-grey-92: #D5EAFF;
+    --color-grey-95: #E6F4FF;
+    --color-grey-96: #F3F4F6;
+
+    --color-point-22: #FFE8F0;
+    --color-point-33: #EBF0FF;
+    --color-point-44: #F0FFF8;
+    --color-point-55: #FFFEE8;
+  }
 }
+
+@layer utilities {
+  .bg-azure-11 { background-color: var(--color-azure-11); }
+  .bg-azure-34 { background-color: var(--color-azure-34); }
+  .bg-azure-36 { background-color: var(--color-azure-36); }
+  .bg-azure-47 { background-color: var(--color-azure-47); }
+  .bg-azure-61 { background-color: var(--color-azure-61); }
+  .bg-azure-82 { background-color: var(--color-azure-82); }
+  .bg-azure-88 { background-color: var(--color-azure-88); }
+
+  .bg-grey-46 { background-color: var(--color-grey-46); }
+  .bg-grey-91 { background-color: var(--color-grey-91); }
+  .bg-grey-92 { background-color: var(--color-grey-92); }
+  .bg-grey-95 { background-color: var(--color-grey-95); }
+  .bg-grey-96 { background-color: var(--color-grey-96); }
+
+  .bg-point-22 { background-color: var(--color-point-22); }
+  .bg-point-33 { background-color: var(--color-point-33); }
+  .bg-point-44 { background-color: var(--color-point-44); }
+  .bg-point-55 { background-color: var(--color-point-55); }
+
+}
+
+
 
 @font-face {
   font-family: 'BMDOHYEON';
@@ -38,4 +74,12 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+
+h1, h2, h3, .link, .link1{
+  font-family: 'BMDOHYEON';
+}
+
+body{
+  background-color: #e6f4ff;
 }
