@@ -1,0 +1,30 @@
+/* Slider.css */
+.custom-slider {
+  width: 100%;
+  height: 8px; /* h-2 대신 직접 지정 */
+  border-radius: 9999px;
+  appearance: none;
+  background: linear-gradient(to right, #3b82f6 50%, #93c5fd 50%);
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 3px solid #3b82f6;
+  border-radius: 50%;
+  margin-top: -6px;
+  cursor: pointer;
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 3px solid #3b82f6;
+  border-radius: 50%;
+  cursor: pointer;
+}
