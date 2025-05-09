@@ -21,74 +21,74 @@ import {
 
 //Design System에 표기되어있는 순서, 사이즈
 
-export const sparklesIcon = () => {
+export const SparklesIcon = () => {
   return <Sparkles size={32} />;
 };
 
-export const copyIcon = () => {
+export const CopyIcon = () => {
   return <Copy width={20} height={16} />;
 };
 
-export const share2Icon = () => {
+export const Share2Icon = () => {
   return <Share2 width={20} height={16} />;
 };
 
-export const downloadIcon = () => {
+export const DownloadIcon = () => {
   return <Download size={16} />;
 };
 
-export const smilePlusIcon = () => {
+export const SmilePlusIcon = () => {
   return <SmilePlus size={16} />;
 };
 
-export const musicIcon = () => {
+export const MusicIcon = () => {
   return <Music4 width={18} height={28} />;
 };
 
-export const usersIcon = () => {
+export const UsersIcon = () => {
   return <Users size={16} />;
 };
 
-export const fileMinusIcon = () => {
+export const FileMinusIcon = () => {
   return <FileMinus size={16} />;
 };
 
-export const rotateCcwIcon = () => {
+export const RotateCcwIcon = () => {
   return <RotateCcw size={16} />;
 };
 
-export const rotateCwIcon = () => {
+export const RotateCwIcon = () => {
   return <RotateCw size={16} />;
 };
 
-export const zoomInIcon = () => {
+export const ZoomInIcon = () => {
   return <ZoomIn size={24} />;
 };
 
-export const zoomOutIcon = () => {
+export const ZoomOutIcon = () => {
   return <ZoomOut size={24} />;
 };
 
-export const trashIcon = () => {
+export const TrashIcon = () => {
   return <Trash2 size={24} />;
 };
 
-export const xIcon = () => {
+export const XIcon = () => {
   return <X size={16} />;
 };
 
-export const underArrowIcon = () => {
+export const UnderArrowIcon = () => {
   return <ChevronDown size={13} />;
 };
 
-export const volumeIcon = () => {
+export const VolumeIcon = () => {
   return <Volume2 size={16} />;
 };
 
-export const pauseIcon = () => {
+export const PauseIcon = () => {
   return <Pause size={24} />;
 };
 
-export const playIcon = () => {
+export const PlayIcon = () => {
   return <Play size={16} />;
 };
