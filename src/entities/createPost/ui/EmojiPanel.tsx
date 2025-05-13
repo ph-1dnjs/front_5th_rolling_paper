@@ -1,4 +1,4 @@
-import { emojiList } from '@/entities/emoji/libs/constants';
+import { emojiList } from '@/entities/createPost/libs/constants';
 import './EmojiPanel.css';
 
 type EmojiPanelProps = {

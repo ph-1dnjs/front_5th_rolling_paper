@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-import { insertEmojiToSelection } from '@/entities/emoji/libs/utils';
-import EmojiPanel from '@/entities/emoji/ui/EmojiPanel';
+import { insertEmojiToSelection } from '@/entities/createPost/libs/utils';
+import EmojiPanel from '@/entities/createPost/ui/EmojiPanel';
 import { SparklesIcon, XIcon, FileMinusIcon } from '@/shared/Icons';
 import LabelInput from '@/shared/labelInput/LabelInput';
 
