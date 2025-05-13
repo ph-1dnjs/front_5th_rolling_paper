@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import { insertEmojiToSelection } from '@/entities/emoji/libs/utils';
 import EmojiPanel from '@/entities/emoji/ui/EmojiPanel';
 import { SparklesIcon, XIcon, FileMinusIcon } from '@/shared/Icons';
 import LabelInput from '@/shared/labelInput/LabelInput';
@@ -23,23 +24,8 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const editorRef = useRef<HTMLDivElement>(null);
 
-  function insertEmoji(src: string) {
-    const sel = window.getSelection();
-    if (!sel || sel.rangeCount === 0) return;
-    const range = sel.getRangeAt(0);
-    const img = document.createElement('img');
-    img.src = src;
-    img.style.display = 'inline-block';
-    img.style.width = '1em';
-    img.style.verticalAlign = 'middle';
-
-    // 커서 위치에 삽입
-    range.insertNode(img);
-
-    // 커서 바로 뒤로 이동
-    range.setStartAfter(img);
-    sel.removeAllRanges();
-    sel.addRange(range);
+  function handleClickEmoji(src: string) {
+    insertEmojiToSelection(src);
     editorRef.current?.focus();
   }
 
@@ -118,7 +104,7 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
 
         <EmojiPanel
           showEmojiList={showEmojiList}
-          onClickEmoji={insertEmoji}
+          onClickEmoji={handleClickEmoji}
           onClickCloseButton={() => setShowEmojiList(false)}
         />
 
