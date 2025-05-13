@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 
 import { insertEmojiToSelection } from '@/entities/createPost/libs/utils';
-import { useCreatePostForm } from '@/entities/createPost/model/useCreatePostForm';
 import EmojiButton from '@/entities/createPost/ui/EmojiButton';
 import EmojiPanel from '@/entities/createPost/ui/EmojiPanel';
 import FormRow from '@/entities/createPost/ui/FormRow';
 import FormSection from '@/entities/createPost/ui/FormSection';
 import MessageEditor from '@/entities/createPost/ui/MessageEditor';
+import { useCreatePostForm } from '@/features/createPost/model/useCreatePostForm';
 import './CreatePostModalContent.css';
 
 interface CreatePostModalContentProps {
