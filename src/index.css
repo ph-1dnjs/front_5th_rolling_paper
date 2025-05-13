@@ -6,68 +6,100 @@
 
 @layer base {
   :root {
-    --color-azure-11: #0F1729;
+    --color-azure-11: #0f1729;
     --color-azure-34: #485563;
-    --color-azure-36: #1B5A9B;
-    --color-azure-47: #647A8B;
-    --color-azure-61: #4F9BE9;
-    --color-azure-82: #A1D6FF;
-    --color-azure-88: #C1E3FF;
+    --color-azure-36: #1b5a9b;
+    --color-azure-47: #647a8b;
+    --color-azure-61: #4f9be9;
+    --color-azure-82: #a1d6ff;
+    --color-azure-88: #c1e3ff;
 
-    --color-grey-46: #66728D;
-    --color-grey-91: #E2E8FD;
-    --color-grey-92: #D5EAFF;
-    --color-grey-95: #E6F4FF;
-    --color-grey-96: #F3F4F6;
+    --color-grey-46: #66728d;
+    --color-grey-91: #e2e8fd;
+    --color-grey-92: #d5eaff;
+    --color-grey-95: #e6f4ff;
+    --color-grey-96: #f3f4f6;
 
-    --color-point-22: #FFE8F0;
-    --color-point-33: #EBF0FF;
-    --color-point-44: #F0FFF8;
-    --color-point-55: #FFFEE8;
+    --color-point-22: #ffe8f0;
+    --color-point-33: #ebf0ff;
+    --color-point-44: #f0fff8;
+    --color-point-55: #fffee8;
   }
 }
 
 @layer utilities {
-  .bg-azure-11 { background-color: var(--color-azure-11); }
-  .bg-azure-34 { background-color: var(--color-azure-34); }
-  .bg-azure-36 { background-color: var(--color-azure-36); }
-  .bg-azure-47 { background-color: var(--color-azure-47); }
-  .bg-azure-61 { background-color: var(--color-azure-61); }
-  .bg-azure-82 { background-color: var(--color-azure-82); }
-  .bg-azure-88 { background-color: var(--color-azure-88); }
+  .bg-azure-11 {
+    background-color: var(--color-azure-11);
+  }
+  .bg-azure-34 {
+    background-color: var(--color-azure-34);
+  }
+  .bg-azure-36 {
+    background-color: var(--color-azure-36);
+  }
+  .bg-azure-47 {
+    background-color: var(--color-azure-47);
+  }
+  .bg-azure-61 {
+    background-color: var(--color-azure-61);
+  }
+  .bg-azure-82 {
+    background-color: var(--color-azure-82);
+  }
+  .bg-azure-88 {
+    background-color: var(--color-azure-88);
+  }
 
-  .bg-grey-46 { background-color: var(--color-grey-46); }
-  .bg-grey-91 { background-color: var(--color-grey-91); }
-  .bg-grey-92 { background-color: var(--color-grey-92); }
-  .bg-grey-95 { background-color: var(--color-grey-95); }
-  .bg-grey-96 { background-color: var(--color-grey-96); }
+  .bg-grey-46 {
+    background-color: var(--color-grey-46);
+  }
+  .bg-grey-91 {
+    background-color: var(--color-grey-91);
+  }
+  .bg-grey-92 {
+    background-color: var(--color-grey-92);
+  }
+  .bg-grey-95 {
+    background-color: var(--color-grey-95);
+  }
+  .bg-grey-96 {
+    background-color: var(--color-grey-96);
+  }
 
-  .bg-point-22 { background-color: var(--color-point-22); }
-  .bg-point-33 { background-color: var(--color-point-33); }
-  .bg-point-44 { background-color: var(--color-point-44); }
-  .bg-point-55 { background-color: var(--color-point-55); }
-
+  .bg-point-22 {
+    background-color: var(--color-point-22);
+  }
+  .bg-point-33 {
+    background-color: var(--color-point-33);
+  }
+  .bg-point-44 {
+    background-color: var(--color-point-44);
+  }
+  .bg-point-55 {
+    background-color: var(--color-point-55);
+  }
 }
-
-
 
 @font-face {
   font-family: 'BMDOHYEON';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GowunDodum-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff') format('woff');
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Interop';
-  src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+  src:
+    url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
       format('woff2'),
     url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
       format('woff');
@@ -76,10 +108,19 @@
   font-display: block;
 }
 
-h1, h2, h3, .link, .link1{
+h1,
+h2,
+h3,
+label,
+textarea,
+input,
+select,
+.link,
+.link1 {
+  color: var(--color-azure-11);
   font-family: 'BMDOHYEON';
 }
 
-body{
+body {
   background-color: #e6f4ff;
 }
