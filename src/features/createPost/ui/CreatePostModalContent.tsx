@@ -21,6 +21,27 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
   const [showEmojiList, setShowEmojiList] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const editorRef = useRef<HTMLDivElement>(null);
+
+  function insertEmoji(src: string) {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) return;
+    const range = sel.getRangeAt(0);
+    const img = document.createElement('img');
+    img.src = src;
+    img.style.display = 'inline-block';
+    img.style.width = '1em';
+    img.style.verticalAlign = 'middle';
+
+    // 커서 위치에 삽입
+    range.insertNode(img);
+
+    // 커서 바로 뒤로 이동
+    range.setStartAfter(img);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    editorRef.current?.focus();
+  }
 
   useEffect(() => {
     textareaRef.current?.focus();
@@ -81,13 +102,12 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
 
         <div className='modal-section'>
           <label>메시지 내용</label>
-          <textarea
-            ref={textareaRef}
+          <div
+            ref={editorRef}
             className='message-input'
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            contentEditable
+            onInput={(e) => setMessage(e.currentTarget.innerText)}
             placeholder='축하와 응원의 메시지를 작성해보세요!'
-            maxLength={200}
           />
           <div className='emoji-button-wrapper'>
             <button className='emoji-toggle' onClick={() => setShowEmojiList(!showEmojiList)}>
@@ -98,6 +118,7 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
 
         <EmojiPanel
           showEmojiList={showEmojiList}
+          onClickEmoji={insertEmoji}
           onClickCloseButton={() => setShowEmojiList(false)}
         />
 

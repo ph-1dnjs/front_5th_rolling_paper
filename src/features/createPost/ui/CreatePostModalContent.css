@@ -50,7 +50,7 @@
   margin-bottom: 8px;
 }
 .modal-section input,
-.modal-section textarea,
+.modal-section .message-input,
 .modal-section select {
   width: 100%;
   padding: 10px;
@@ -58,6 +58,11 @@
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
+.message-input {
+  background: #fff;
+}
+
 .message-input {
   min-height: 200px;
   resize: none;

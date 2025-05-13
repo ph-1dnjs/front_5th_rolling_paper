@@ -3,11 +3,13 @@ import './EmojiPanel.css';
 
 type EmojiPanelProps = {
   showEmojiList: boolean;
+  // eslint-disable-next-line no-unused-vars
+  onClickEmoji: (src: string) => void;
   onClickCloseButton: () => void;
 };
 
 const EmojiPanel = (props: EmojiPanelProps) => {
-  const { showEmojiList, onClickCloseButton } = props;
+  const { showEmojiList, onClickCloseButton, onClickEmoji } = props;
 
   return (
     <>
@@ -19,7 +21,13 @@ const EmojiPanel = (props: EmojiPanelProps) => {
           </div>
           <div className='emoji-grid'>
             {emojiList.map((src) => (
-              <img key={src} src={src} alt='이모지' className='emoji-img' />
+              <img
+                key={src}
+                src={src}
+                alt='이모지'
+                className='emoji-img'
+                onClick={() => onClickEmoji(src)}
+              />
             ))}
           </div>
         </div>
