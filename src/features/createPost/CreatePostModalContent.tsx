@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 
 import EmojiPanel from '@/entities/emoji/ui/EmojiPanel';
 import { SparklesIcon, XIcon, FileMinusIcon } from '@/shared/Icons';
+import LabelInput from '@/shared/labelInput/LabelInput';
 
 import './CreatePostModalContent.css';
 
@@ -57,23 +58,23 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
       <div className='modal-body'>
         <div className='modal-row'>
           <div className='modal-section'>
-            <label>받는 사람</label>
-            <input
-              type='text'
+            <LabelInput
+              label='받는 사람'
               value={receiver}
-              onChange={(e) => setReceiver(e.target.value)}
+              onChange={setReceiver}
               placeholder='받는 사람의 이름'
               maxLength={20}
+              inputMode='text'
             />
           </div>
           <div className='modal-section'>
-            <label>보내는 사람</label>
-            <input
-              type='text'
+            <LabelInput
+              label='보내는 사람'
               value={sender}
-              onChange={(e) => setSender(e.target.value)}
+              onChange={setSender}
               placeholder='당신의 이름'
               maxLength={20}
+              inputMode='text'
             />
           </div>
         </div>
@@ -102,16 +103,14 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
 
         <div className='modal-row'>
           <div className='modal-section'>
-            <label>비밀번호 (4자리)</label>
-            <input
+            <LabelInput
+              label='비밀번호 (4자리)'
               type='password'
               value={password}
-              onChange={(e) => {
-                const value = e.target.value;
-                if (/^\d{0,4}$/.test(value)) setPassword(value);
-              }}
+              onChange={setPassword}
               placeholder='4자리 숫자'
               inputMode='numeric'
+              maxLength={4}
             />
             <small className='password-guide'>메시지 수정/삭제 시 필요합니다</small>
           </div>
