@@ -22,7 +22,7 @@ import {
 //Design System에 표기되어있는 순서, 사이즈
 
 export const SparklesIcon = () => {
-  return <Sparkles size={32} />;
+  return <Sparkles size={20} />;
 };
 
 export const CopyIcon = () => {
