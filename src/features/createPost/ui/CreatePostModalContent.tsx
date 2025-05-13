@@ -35,7 +35,7 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
       setError('메시지를 1자 이상 입력해주세요.');
       return;
     }
-    if (password.length !== 4 || !/^[0-9]+$/.test(password)) {
+    if (password.length !== 4) {
       setError('비밀번호는 4자리 숫자여야 합니다.');
       return;
     }

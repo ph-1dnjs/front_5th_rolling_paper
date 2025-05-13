@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import '@/index.css';
 
 import { QueryProvider } from '@/app/providers/QueryProvider';
-import CreatePostModalContent from '@/features/createPost/CreatePostModalContent';
+import CreatePostModalContent from '@/features/createPost/ui/CreatePostModalContent';
 import HomePage from '@/pages/HomePage';
 import { ModalProvider } from '@/shared/modal/ModalService';
 
