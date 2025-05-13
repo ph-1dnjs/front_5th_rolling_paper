@@ -26,11 +26,30 @@
 }
 
 .modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 24px;
   line-height: 32px;
-  margin-bottom: 16px;
   letter-spacing: -0.6px;
-  font-weight: bold;
+}
+
+.password-guide {
+  font-size: 12px;
+  line-height: 16px;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  cursor: pointer;
+}
+
+.lucide-sparkles {
+  color: var(--color-azure-61);
 }
 
 .modal-row {
@@ -60,15 +79,6 @@ select {
   }
 }
 
-.modal-section textarea {
-  background-color: #fff;
-  resize: none;
-  &:focus {
-    outline: none;
-    border-color: #4a90e2;
-  }
-}
-
 .modal-section input,
 .modal-section textarea,
 .modal-section select {
@@ -79,8 +89,19 @@ select {
   font-size: 14px;
 }
 
+.modal-section textarea {
+  border: 2px solid var(--color-azure-88);
+  background-color: #fff;
+  resize: none;
+  &:focus {
+    outline: none;
+    border-color: #4a90e2;
+  }
+}
+
 .modal-header,
 .modal-footer {
+  position: relative;
   padding: 0 25px;
   flex-shrink: 0;
 }
@@ -98,7 +119,6 @@ select {
 }
 
 .modal-section textarea {
-  resize: vertical;
   min-height: 254px;
 }
 
@@ -157,13 +177,12 @@ select {
   }
 }
 
-.sticker-button-wrapper {
+.emoji-button-wrapper {
   text-align: right;
   margin-top: 8px;
 }
 
-.sticker-toggle {
-  width: 115px;
+.emoji-toggle {
   margin-top: 8px;
   background: none;
   border: none;
@@ -173,7 +192,7 @@ select {
   padding: 4px 0;
 }
 
-.sticker-panel {
+.emoji-panel {
   background: #f9f9f9;
   border-radius: 12px;
   padding: 16px;
@@ -181,20 +200,20 @@ select {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-.sticker-header {
+.emoji-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
 }
 
-.sticker-grid {
+.emoji-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
   gap: 10px;
 }
 
-.sticker-img {
+.emoji-img {
   width: 40px;
   height: 40px;
   object-fit: contain;
@@ -203,12 +222,23 @@ select {
   transition: transform 0.2s ease;
 }
 
-.sticker-img:hover {
+.emoji-img:hover {
   transform: scale(1.1);
 }
 
-.selected-sticker {
+.selected-emoji {
   margin-top: 8px;
+}
+
+.emoji-toggle {
+  padding: 10px 13px;
+  border-radius: 10px;
+  border: 1px solid var(--color-azure-88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  float: right;
 }
 
 //--------

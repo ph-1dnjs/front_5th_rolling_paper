@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+
 import './MessageModal.css';
+import { SparklesIcon, XIcon, FileMinusIcon } from '../shared/Icons';
 
 interface MessageModalProps {
   onClose: () => void;
@@ -56,8 +58,12 @@ const MessageModal: React.FC<MessageModalProps> = ({ onClose }) => {
       <div className='modal' role='dialog' aria-modal='true' aria-labelledby='message-modal-title'>
         <div className='modal-header'>
           <h2 id='message-modal-title' className='modal-title'>
-            ✨ 프론트엔드 1팀에게 메시지 작성하기
+            <SparklesIcon /> 프론트엔드 1팀에게 메시지 작성하기
           </h2>
+
+          <button className='modal-close' onClick={onClose} aria-label='Close modal'>
+            <XIcon />
+          </button>
         </div>
 
         <div className='modal-body'>
@@ -103,7 +109,7 @@ const MessageModal: React.FC<MessageModalProps> = ({ onClose }) => {
             </div>
             <div className='emoji-button-wrapper'>
               <button className='emoji-toggle' onClick={() => shoShowEmojiList(!showEmojiList)}>
-                📎 이모지 추가
+                <FileMinusIcon /> 이모지 추가
               </button>
             </div>
           </div>
@@ -135,7 +141,7 @@ const MessageModal: React.FC<MessageModalProps> = ({ onClose }) => {
                 placeholder='4자리 숫자'
                 inputMode='numeric'
               />
-              <small>메시지 수정/삭제 시 필요합니다</small>
+              <small className='password-guide'>메시지 수정/삭제 시 필요합니다</small>
             </div>
             <div className='modal-section'>
               <label>배경 색상</label>
