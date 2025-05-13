@@ -1,4 +1,5 @@
 import { emojiList } from '@/entities/emoji/libs/constants';
+import './EmojiPanel.css';
 
 type EmojiPanelProps = {
   showEmojiList: boolean;
