@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
+import EmojiPanel from '@/entities/emoji/ui/EmojiPanel';
 import { SparklesIcon, XIcon, FileMinusIcon } from '@/shared/Icons';
 
 import './CreatePostModalContent.css';
@@ -18,7 +19,6 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
   const [error, setError] = useState('');
   const [showEmojiList, setShowEmojiList] = useState(false);
 
-  const emojiList = Array.from({ length: 10 }, (_, i) => `/emojis/emoji${i + 1}.png`);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -95,19 +95,10 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
           </div>
         </div>
 
-        {showEmojiList && (
-          <div className='emoji-panel'>
-            <div className='emoji-header'>
-              <strong>이모지 선택</strong>
-              <button onClick={() => setShowEmojiList(false)}>✕</button>
-            </div>
-            <div className='emoji-grid'>
-              {emojiList.map((src) => (
-                <img key={src} src={src} alt='이모지' className='emoji-img' />
-              ))}
-            </div>
-          </div>
-        )}
+        <EmojiPanel
+          showEmojiList={showEmojiList}
+          onClickCloseButton={() => setShowEmojiList(false)}
+        />
 
         <div className='modal-row'>
           <div className='modal-section'>
