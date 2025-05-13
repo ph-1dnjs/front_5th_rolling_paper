@@ -1,23 +1,23 @@
-import { emojiList } from '@/entities/createPost/libs/constants';
 import './EmojiPanel.css';
 
 type EmojiPanelProps = {
-  showEmojiList: boolean;
+  show: boolean;
   // eslint-disable-next-line no-unused-vars
   onClickEmoji: (src: string) => void;
-  onClickCloseButton: () => void;
+  onClose: () => void;
+  emojiList: string[];
 };
 
 const EmojiPanel = (props: EmojiPanelProps) => {
-  const { showEmojiList, onClickCloseButton, onClickEmoji } = props;
+  const { show, onClose, onClickEmoji, emojiList } = props;
 
   return (
     <>
-      {showEmojiList && (
+      {show && (
         <div className='emoji-panel'>
           <div className='emoji-header'>
             <strong>이모지 선택</strong>
-            <button onClick={onClickCloseButton}>✕</button>
+            <button onClick={onClose}>✕</button>
           </div>
           <div className='emoji-grid'>
             {emojiList.map((src) => (

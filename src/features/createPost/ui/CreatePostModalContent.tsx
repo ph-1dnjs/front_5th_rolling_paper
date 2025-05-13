@@ -1,138 +1,112 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import { insertEmojiToSelection } from '@/entities/createPost/libs/utils';
+import { useCreatePostForm } from '@/entities/createPost/model/useCreatePostForm';
+import EmojiButton from '@/entities/createPost/ui/EmojiButton';
 import EmojiPanel from '@/entities/createPost/ui/EmojiPanel';
-import { SparklesIcon, XIcon, FileMinusIcon } from '@/shared/Icons';
-import LabelInput from '@/shared/labelInput/LabelInput';
-
+import FormRow from '@/entities/createPost/ui/FormRow';
+import FormSection from '@/entities/createPost/ui/FormSection';
+import MessageEditor from '@/entities/createPost/ui/MessageEditor';
 import './CreatePostModalContent.css';
 
-interface CreatePostModalProps {
+interface CreatePostModalContentProps {
   onClose: () => void;
+  // eslint-disable-next-line no-unused-vars
+  onSave: (values: any) => void;
 }
 
-const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose }) => {
-  const [receiver, setReceiver] = useState('');
-  const [sender, setSender] = useState('');
-  const [message, setMessage] = useState('');
-  const [password, setPassword] = useState('');
-  const [bgColor, setBgColor] = useState('white');
-  const [showEmojiList, setShowEmojiList] = useState(false);
-
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
+const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose, onSave }) => {
+  const { values, setField, validateAndSave } = useCreatePostForm(onSave);
   const editorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    editorRef.current?.focus();
+  }, []);
 
   function handleClickEmoji(src: string) {
     insertEmojiToSelection(src);
     editorRef.current?.focus();
   }
 
-  useEffect(() => {
-    textareaRef.current?.focus();
-  }, []);
-
-  const handleSave = () => {
-    if (!receiver.trim() || !sender.trim()) {
-      alert('이름을 모두 입력해주세요.');
-    } else if (message.trim().length < 1) {
-      alert('메시지를 1자 이상 입력해주세요.');
-    } else if (password.length !== 4) {
-      alert('비밀번호는 4자리 숫자여야 합니다.');
-    } else {
-      // onSave(); -> 별도 파일로 분리
-    }
-  };
-
   return (
     <>
       <div className='modal-header'>
-        <h2 id='message-modal-title' className='modal-title'>
-          <SparklesIcon /> 프론트엔드 1팀에게 메시지 작성하기
-        </h2>
-        <button className='modal-close' onClick={onClose} aria-label='Close modal'>
-          <XIcon />
+        <h2 className='modal-title'>프론트엔드 1팀에게 메시지 작성하기</h2>
+        <button className='modal-close' onClick={onClose}>
+          ✕
         </button>
       </div>
 
       <div className='modal-body'>
-        <div className='modal-row'>
-          <div className='modal-section'>
-            <LabelInput
-              label='받는 사람'
-              value={receiver}
-              onChange={setReceiver}
+        <FormRow>
+          <FormSection label='받는 사람'>
+            <input
+              value={values.receiver}
+              onChange={(e) => setField('receiver', e.target.value)}
               placeholder='받는 사람의 이름'
               maxLength={20}
-              inputMode='text'
             />
-          </div>
-          <div className='modal-section'>
-            <LabelInput
-              label='보내는 사람'
-              value={sender}
-              onChange={setSender}
+          </FormSection>
+          <FormSection label='보내는 사람'>
+            <input
+              value={values.sender}
+              onChange={(e) => setField('sender', e.target.value)}
               placeholder='당신의 이름'
               maxLength={20}
-              inputMode='text'
             />
-          </div>
-        </div>
+          </FormSection>
+        </FormRow>
 
-        <div className='modal-section'>
-          <label>메시지 내용</label>
-          <div
+        <FormSection label='메시지 내용'>
+          <MessageEditor
             ref={editorRef}
-            className='message-input'
-            contentEditable
-            onInput={(e) => setMessage(e.currentTarget.innerText)}
-            placeholder='축하와 응원의 메시지를 작성해보세요!'
+            value={values.message}
+            onChange={(text) => setField('message', text)}
           />
-          <div className='emoji-button-wrapper'>
-            <button className='emoji-toggle' onClick={() => setShowEmojiList(!showEmojiList)}>
-              <FileMinusIcon /> 이모지 추가
-            </button>
-          </div>
-        </div>
+        </FormSection>
 
-        <EmojiPanel
-          showEmojiList={showEmojiList}
-          onClickEmoji={handleClickEmoji}
-          onClickCloseButton={() => setShowEmojiList(false)}
-        />
+        <FormRow style={{ justifyContent: 'flex-end' }}>
+          {/* TODO: 위치 조정 및 tailwind로 치환하기 */}
+          <EmojiButton onToggle={() => setField('showEmojiList', !values.message)} />
 
-        <div className='modal-row'>
-          <div className='modal-section'>
-            <LabelInput
-              label='비밀번호 (4자리)'
+          <EmojiPanel
+            show={values.showEmojiList}
+            emojiList={Array.from({ length: 10 }, (_, i) => `/emojis/emoji${i + 1}.png`)}
+            onClickEmoji={handleClickEmoji}
+            onClose={() => setField('showEmojiList', false)}
+          />
+        </FormRow>
+
+        <FormRow>
+          <FormSection label='비밀번호 (4자리)'>
+            <input
               type='password'
-              value={password}
-              onChange={setPassword}
+              value={values.password}
+              onChange={(e) => setField('password', e.target.value)}
               placeholder='4자리 숫자'
-              inputMode='numeric'
               maxLength={4}
             />
-            <small className='password-guide'>메시지 수정/삭제 시 필요합니다</small>
-          </div>
-          <div className='modal-section'>
-            <label>배경 색상</label>
-            <select value={bgColor} onChange={(e) => setBgColor(e.target.value)}>
-              <option value='white'>기본 (흰색)</option>
+          </FormSection>
+          <FormSection label='배경 색상'>
+            <select value={values.bgColor} onChange={(e) => setField('bgColor', e.target.value)}>
+              <option value='white'>흰색</option>
               <option value='pink'>분홍</option>
               <option value='yellow'>노랑</option>
               <option value='blue'>파랑</option>
             </select>
-          </div>
-        </div>
+          </FormSection>
+        </FormRow>
       </div>
 
       <div className='modal-footer'>
+        {/* {error && <div className='error-message'>{error}</div>} */}
         <div className='modal-actions'>
           <button onClick={onClose}>취소</button>
-          <button onClick={handleSave}>메시지 저장하기</button>
+          <button onClick={validateAndSave}>메시지 저장하기</button>
         </div>
       </div>
     </>
   );
 };
 
-export default CreatePostModal;
+export default CreatePostModalContent;

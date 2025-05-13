@@ -1,0 +1,14 @@
+/* !! tailwind로 교체하면서 제거하기 */
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .modal-row {
+    flex-direction: column;
+  }
+}

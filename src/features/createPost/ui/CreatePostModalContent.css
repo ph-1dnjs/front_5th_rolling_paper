@@ -1,9 +1,12 @@
+/* !! tailwind로 교체하면서 제거하기 */
+
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
 }
+
 .modal-title {
   display: flex;
   align-items: center;
@@ -16,6 +19,7 @@
     color: var(--color-azure-61);
   }
 }
+
 .password-guide {
   font-size: 12px;
   line-height: 16px;
@@ -35,37 +39,17 @@
   padding: 0 24px 16px;
   overflow-y: auto;
 }
-.modal-row {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.modal-section {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.modal-section label {
+.form-section label {
   font-size: 18px;
   margin-bottom: 8px;
 }
-.modal-section input,
-.modal-section .message-input,
-.modal-section select {
+.form-section input,
+.form-section select {
   width: 100%;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-.message-input {
-  background: #fff;
-}
-
-.message-input {
-  min-height: 200px;
-  resize: none;
 }
 
 .modal-actions {
@@ -96,24 +80,4 @@
 .modal-actions button:last-of-type {
   background: #4a90e2;
   color: #fff;
-}
-
-.emoji-toggle {
-  margin-top: 8px;
-  padding: 10px 13px;
-  border-radius: 10px;
-  color: #4a90e2;
-  border: 1px solid var(--color-azure-88);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  float: right;
-}
-
-/* 반응형 */
-@media (max-width: 768px) {
-  .modal-row {
-    flex-direction: column;
-  }
 }
