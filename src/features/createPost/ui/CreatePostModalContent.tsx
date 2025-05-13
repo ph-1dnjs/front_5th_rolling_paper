@@ -9,16 +9,14 @@ import './CreatePostModalContent.css';
 
 interface CreatePostModalProps {
   onClose: () => void;
-  onSave: () => void;
 }
 
-const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) => {
+const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose }) => {
   const [receiver, setReceiver] = useState('');
   const [sender, setSender] = useState('');
   const [message, setMessage] = useState('');
   const [password, setPassword] = useState('');
   const [bgColor, setBgColor] = useState('white');
-  const [error, setError] = useState('');
   const [showEmojiList, setShowEmojiList] = useState(false);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -35,19 +33,14 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
 
   const handleSave = () => {
     if (!receiver.trim() || !sender.trim()) {
-      setError('이름을 모두 입력해주세요.');
-      return;
+      alert('이름을 모두 입력해주세요.');
+    } else if (message.trim().length < 1) {
+      alert('메시지를 1자 이상 입력해주세요.');
+    } else if (password.length !== 4) {
+      alert('비밀번호는 4자리 숫자여야 합니다.');
+    } else {
+      // onSave(); -> 별도 파일로 분리
     }
-    if (message.trim().length < 1) {
-      setError('메시지를 1자 이상 입력해주세요.');
-      return;
-    }
-    if (password.length !== 4) {
-      setError('비밀번호는 4자리 숫자여야 합니다.');
-      return;
-    }
-    setError('');
-    onSave();
   };
 
   return (
@@ -56,7 +49,6 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
         <h2 id='message-modal-title' className='modal-title'>
           <SparklesIcon /> 프론트엔드 1팀에게 메시지 작성하기
         </h2>
-
         <button className='modal-close' onClick={onClose} aria-label='Close modal'>
           <XIcon />
         </button>
@@ -134,7 +126,6 @@ const CreatePostModal: React.FC<CreatePostModalProps> = ({ onClose, onSave }) =>
       </div>
 
       <div className='modal-footer'>
-        {error && <div className='error-message'>{error}</div>}
         <div className='modal-actions'>
           <button onClick={onClose}>취소</button>
           <button onClick={handleSave}>메시지 저장하기</button>
