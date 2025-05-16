@@ -1,16 +1,72 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-white: #ffffff;
-  --color-gray0: #fcfcfc;
-  --color-gray1: #e3e3e3;
-  --color-gray2: #c9c9c9;
-  --color-gray3: #b0b0b0;
-  --color-gray4: #969696;
-  --color-gray5: #7d7d7d;
-  --color-gray6: #636363;
-  --color-gray7: #4a4a4a;
-  --color-gray8: #303030;
-  --color-gray9: #171717;
-  --color-black: #000000;
+  --color-azure-11: #0f1729;
+  --color-azure-34: #485563;
+  --color-azure-36: #1b5a9b;
+  --color-azure-47: #647a8b;
+  --color-azure-61: #4f9be9;
+  --color-azure-82: #a1d6ff;
+  --color-azure-88: #c1e3ff;
+
+  --color-grey-46: #66728d;
+  --color-grey-91: #e2e8fd;
+  --color-grey-92: #d5eaff;
+  --color-grey-95: #e6f4ff;
+  --color-grey-96: #f3f4f6;
+
+  --color-point-22: #ffe8f0;
+  --color-point-33: #ebf0ff;
+  --color-point-44: #f0fff8;
+  --color-point-55: #fffee8;
+}
+
+.font-bmdohy {
+  font-family: 'BMDOHYEON', sans-serif;
+}
+.font-gowun {
+  font-family: 'GowunDodum-Regular', sans-serif;
+}
+.font-interop {
+  font-family: 'Interop', sans-serif;
+}
+
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GowunDodum-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Interop';
+  src:
+    url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2')
+      format('woff2'),
+    url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+h1,
+h2,
+h3,
+.link,
+.link1 {
+  font-family: 'BMDOHYEON';
+}
+
+body {
+  background-color: #e6f4ff;
 }

@@ -7,6 +7,16 @@ interface MessageModalProps {
   onSave: () => void;
 }
 
+interface Sticker {
+  id: number;
+  src: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  rotation: number;
+}
+
 const STICKERS = Array.from({ length: 10 }, (_, i) => `/stickers/sticker${i + 1}.png`);
 
 const MessageModal: React.FC<MessageModalProps> = ({ onClose }) => {
@@ -17,7 +27,7 @@ const MessageModal: React.FC<MessageModalProps> = ({ onClose }) => {
   const [bgColor, setBgColor] = useState('white');
   const [error, setError] = useState('');
   const [showStickers, setShowStickers] = useState(false);
-  const [stickers, setStickers] = useState<any[]>([]);
+  const [stickers, setStickers] = useState<Sticker[]>([]);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const canvasRef = useRef<HTMLDivElement>(null);
   const stickerRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
@@ -147,6 +157,7 @@ const MessageModal: React.FC<MessageModalProps> = ({ onClose }) => {
               {stickers.map((sticker) => (
                 <div
                   key={sticker.id}
+                  //@ts-expect-error ref 타입 오류
                   ref={(el) => (stickerRefs.current[sticker.id] = el)}
                   style={{
                     position: 'absolute',
