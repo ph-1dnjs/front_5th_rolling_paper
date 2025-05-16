@@ -10,7 +10,7 @@ const CardGrid: React.FC<CardGridProps<any>> = ({ items, RenderItem }) => {
     <div
       className={`
           p-6
-          bg-gray-400
+          bg-grey-96
           inline-grid
           grid-cols-[repeat(1,_306px)]
           md:grid-cols-[repeat(3,_212px)]
