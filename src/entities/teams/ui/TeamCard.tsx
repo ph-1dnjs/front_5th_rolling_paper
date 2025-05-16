@@ -9,13 +9,15 @@ interface Props {
 
 const TeamCard: React.FC<Props> = ({ item }) => {
   return (
-    <div className='aspect-square bg-white rounded-lg flex flex-col justify-between'>
+    <div className='aspect-square bg-white rounded-lg flex flex-col justify-between border border-azure-88'>
       <div className='pt-5 px-5'>
         <div className='flex justify-between items-center'>
           <div className='text-xl font-bold'>프론트엔드 {item}팀</div>
-          <div className='bg-blue-400 py-[3px] px-3 rounded-2xl text-sm text-white'>{0}명</div>
+          <div className='bg-azure-61 opacity-80 py-[3px] px-3 rounded-2xl text-sm text-white'>
+            {0}명
+          </div>
         </div>
-        <div className='flex mt-1.5 mb-2 text-sm text-[#64748B]'>팀 한줄소개</div>
+        <div className='flex mt-1.5 mb-2 text-sm text-azure-47'>팀 한줄소개</div>
         <div className='flex flex-wrap justify-center gap-y-2'>
           <NameTag name='정민' />
           <NameTag name='유빈' />
