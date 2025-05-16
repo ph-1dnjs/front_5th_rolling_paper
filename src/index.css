@@ -21,6 +21,16 @@
   --color-point-55: #fffee8;
 }
 
+.font-bmdohy {
+  font-family: 'BMDOHYEON', sans-serif;
+}
+.font-gowun {
+  font-family: 'GowunDodum-Regular', sans-serif;
+}
+.font-interop {
+  font-family: 'Interop', sans-serif;
+}
+
 @font-face {
   font-family: 'BMDOHYEON';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff')
