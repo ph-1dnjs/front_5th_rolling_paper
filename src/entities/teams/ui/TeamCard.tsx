@@ -7,8 +7,6 @@ interface Props {
   item: string;
 }
 
-// TODO: 하드코딩 컬러셋 적용
-
 const TeamCard: React.FC<Props> = ({ item }) => {
   return (
     <div className='aspect-square bg-white rounded-lg flex flex-col justify-between'>
