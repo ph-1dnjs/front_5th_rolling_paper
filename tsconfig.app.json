@@ -44,6 +44,13 @@
     // .ts 확장자 import 비활성화 (Vite가 처리)
     "allowImportingTsExtensions": false
   },
-  "include": ["src/**/*", "*.ts", "*.tsx", "vite.config.ts", "src/vite-env.d.ts"],
+  "include": [
+    "src/**/*",
+    "*.ts",
+    "*.tsx",
+    "vite.config.ts",
+    "src/vite-env.d.ts",
+    "src/custom.d.ts"
+  ],
   "exclude": ["node_modules", "build", "dist", "coverage"]
 }
