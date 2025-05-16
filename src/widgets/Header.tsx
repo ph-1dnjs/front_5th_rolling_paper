@@ -1,16 +1,22 @@
 import React from 'react';
 
-// TODO: 공통 디자인 셋업 적용 필요
-const Header: React.FC = () => {
+import { SparklesIcon } from '@/shared/Icons';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const Header: React.FC<Props> = ({ title, description }) => {
   return (
     <div className='flex flex-col items-center'>
-      <div>
-        {/* icon 추가 */}
-        <h1 className='text-[40px] mx-2'>롤링페이퍼</h1>
-        {/* icon 추가 */}
+      <div className='flex items-center justify-center'>
+        <SparklesIcon className='text-azure-61' />
+        <h1 className='text-[40px] mx-2 text-azure-36'>{title}</h1>
+        <SparklesIcon className='text-azure-82' />
       </div>
-      <p className='max-w-[685px] my-2 text-[18px] '>
-        프론트엔드 부트캠프 수료생들을 위한 롤링페이퍼입니다. 팀을 선택하여 메시지를 남겨보세요!
+      <p className='max-w-[685px] my-2 text-[18px] font-gowun text-center text-azure-34'>
+        {description}
       </p>
     </div>
   );
