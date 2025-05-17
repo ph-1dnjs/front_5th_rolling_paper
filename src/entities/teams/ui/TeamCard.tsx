@@ -5,7 +5,7 @@ interface Props {
 }
 
 const TeamCard: React.FC<Props> = ({ item }) => {
-  return <div>{item}팀</div>;
+  return <div className='aspect-square bg-white rounded-lg'>{item}팀</div>;
 };
 
 export default TeamCard;

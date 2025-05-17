@@ -1,0 +1,20 @@
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #e6f2ff;
+  border: 2px solid #4499ee;
+  margin-top: 0px; /* thumb을 중앙 정렬 */
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #e6f2ff;
+  border: 2px solid #4499ee;
+  cursor: pointer;
+}

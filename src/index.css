@@ -1,8 +1,13 @@
 @import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-azure-11: #0f1729;
+  --color-azure-34: #485563;
+  --color-azure-36: #1b5a9b;
+  --color-azure-47: #647a8b;
+  --color-azure-61: #4f9be9;
+  --color-azure-82: #a1d6ff;
+  --color-azure-88: #c1e3ff;
 
 @layer base {
   :root {
@@ -78,6 +83,26 @@
   .bg-point-55 {
     background-color: var(--color-point-55);
   }
+  --color-grey-46: #66728d;
+  --color-grey-91: #e2e8fd;
+  --color-grey-92: #d5eaff;
+  --color-grey-95: #e6f4ff;
+  --color-grey-96: #f3f4f6;
+
+  --color-point-22: #ffe8f0;
+  --color-point-33: #ebf0ff;
+  --color-point-44: #f0fff8;
+  --color-point-55: #fffee8;
+}
+
+.font-bmdohy {
+  font-family: 'BMDOHYEON', sans-serif;
+}
+.font-gowun {
+  font-family: 'GowunDodum-Regular', sans-serif;
+}
+.font-interop {
+  font-family: 'Interop', sans-serif;
 }
 
 @font-face {
@@ -123,6 +148,11 @@ select,
 
 button {
   cursor: pointer;
+}
+
+.link,
+.link1 {
+  font-family: 'BMDOHYEON';
 }
 
 body {

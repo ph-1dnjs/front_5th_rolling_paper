@@ -7,6 +7,7 @@ import FormRow from '@/entities/createPost/ui/FormRow';
 import FormSection from '@/entities/createPost/ui/FormSection';
 import MessageEditor from '@/entities/createPost/ui/MessageEditor';
 import { useCreatePostForm } from '@/features/createPost/model/useCreatePostForm';
+import { SparklesIcon } from '@/shared/Icons';
 import './CreatePostModalContent.css';
 
 interface CreatePostModalContentProps {
@@ -38,7 +39,7 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
     <>
       <div className='modal-header flex items-center justify-between pt-4 pl-6 pr-6 pb-4'>
         <h2 className='modal-title flex items-center text-2xl leading-8'>
-          프론트엔드 1팀에게 메시지 작성하기
+          <SparklesIcon className='w-5 h-5' /> {'??'}팀에게 메시지 작성하기
         </h2>
         <button className='modal-close absolute cursor-pointer' onClick={onClose}>
           ✕
