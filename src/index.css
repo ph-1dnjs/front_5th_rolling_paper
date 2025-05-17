@@ -121,6 +121,10 @@ select,
   font-family: 'BMDOHYEON';
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background-color: #e6f4ff;
 }
