@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import './MessageEditor.css';
 
 interface MessageEditorProps {
-  value: string;
+  value?: string;
   // eslint-disable-next-line no-unused-vars
   onChange: (text: string) => void;
 }

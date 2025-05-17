@@ -1,4 +1,4 @@
 .message-editor {
   min-height: 200px;
-  border: 1px solid #ccc;
+  border: 2px solid var(--color-azure-88);
 }

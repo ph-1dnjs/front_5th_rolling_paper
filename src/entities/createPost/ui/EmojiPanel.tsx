@@ -1,3 +1,4 @@
+import { XIcon } from '@/shared/Icons';
 import './EmojiPanel.css';
 
 type EmojiPanelProps = {
@@ -14,10 +15,12 @@ const EmojiPanel = (props: EmojiPanelProps) => {
   return (
     <>
       {show && (
-        <div className='emoji-panel bg-gray-100 p-4'>
+        <div className='emoji-panel bg-gray-100 p-4 w-full -mt-2 mb-4'>
           <div className='emoji-header flex justify-between items-center mb-2'>
             <strong>이모지 선택</strong>
-            <button onClick={onClose}>✕</button>
+            <button className='w-8 h-8 flex items-center justify-center' onClick={onClose}>
+              <XIcon />
+            </button>
           </div>
           <div className='emoji-box grid'>
             {emojiList.map((src) => (
