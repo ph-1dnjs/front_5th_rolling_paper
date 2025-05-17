@@ -29,6 +29,11 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
     setField('message', editorRef.current?.innerHTML || '');
   }
 
+  function handlePasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const value = e.target.value.replace(/[^0-9]/g, '');
+    setField('password', value);
+  }
+
   return (
     <>
       <div className='modal-header flex items-center justify-between pt-4 pl-6 pr-6 pb-4'>
@@ -64,7 +69,6 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
 
         <FormSection label='메시지 내용'>
           <MessageEditor ref={editorRef} onChange={(text) => setField('message', text)} />
-          {values.message}
         </FormSection>
 
         <FormRow className='justify-end'>
@@ -83,10 +87,10 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
         <FormRow>
           <FormSection label='비밀번호 (4자리)'>
             <input
-              className='w-full p-2 text-sm rounded-md h-10'
+              className='w-full p-2 text-sm rounded-md h-10 text-black'
               type='password'
               value={values.password}
-              onChange={(e) => setField('password', e.target.value)}
+              onChange={handlePasswordChange}
               placeholder='4자리 숫자'
               maxLength={4}
             />
