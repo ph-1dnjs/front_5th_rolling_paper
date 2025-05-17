@@ -6,6 +6,7 @@ export interface CreatePostFormValues {
   message: string;
   password: string;
   bgColor: string;
+  showEmojiList: boolean;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -16,6 +17,7 @@ export const useCreatePostForm = (onSave: (values: CreatePostFormValues) => void
     message: '',
     password: '',
     bgColor: 'white',
+    showEmojiList: false,
   });
   const [error, setError] = useState<string>('');
 

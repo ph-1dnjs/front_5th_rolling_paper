@@ -26,6 +26,7 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
   function handleClickEmoji(src: string) {
     editorRef.current?.focus();
     insertEmojiToSelection(src);
+    setField('message', editorRef.current?.innerHTML || '');
   }
 
   return (
@@ -62,16 +63,15 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
         </FormRow>
 
         <FormSection label='메시지 내용'>
-          <MessageEditor
-            ref={editorRef}
-            value={values.message}
-            onChange={(text) => setField('message', text)}
-          />
+          <MessageEditor ref={editorRef} onChange={(text) => setField('message', text)} />
+          {values.message}
         </FormSection>
 
         <FormRow className='justify-end'>
-          <EmojiButton onToggle={() => setField('showEmojiList', !values.message)} />
+          <EmojiButton onToggle={() => setField('showEmojiList', !values.showEmojiList)} />
+        </FormRow>
 
+        <FormRow>
           <EmojiPanel
             show={values.showEmojiList}
             emojiList={Array.from({ length: 10 }, (_, i) => `/emojis/emoji${i + 1}.png`)}
