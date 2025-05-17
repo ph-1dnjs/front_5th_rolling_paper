@@ -1,0 +1,4 @@
+.message-editor {
+  min-height: 200px;
+  border: 2px solid var(--color-azure-88);
+}

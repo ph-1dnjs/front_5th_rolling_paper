@@ -1,0 +1,49 @@
+.modal-title {
+  gap: 8px;
+  letter-spacing: -0.6px;
+  .lucide-sparkles {
+    color: var(--color-azure-61);
+  }
+}
+
+.modal-close {
+  top: 17px;
+  right: 17px;
+}
+
+/* 본문 */
+.modal-body {
+  padding: 0 24px 16px;
+}
+
+.form-section label {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.form-section input,
+.form-section select {
+  border: 1px solid #ccc;
+}
+
+.modal-actions {
+  gap: 10px;
+}
+
+/* 푸터 */
+.modal-footer {
+  padding: 16px 24px;
+  gap: 10px;
+}
+
+.modal-actions button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+}
+.modal-actions button:first-of-type {
+  border: 1px solid #e2e8f0;
+}
+.modal-actions button:last-of-type {
+  background: #4a90e2;
+  color: #fff;
+}

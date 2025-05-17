@@ -1,0 +1,17 @@
+.emoji-panel {
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.emoji-box {
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 10px;
+}
+
+.emoji-img {
+  transition: transform 0.2s ease;
+}
+
+.emoji-img:hover {
+  transform: scale(1.1);
+}
