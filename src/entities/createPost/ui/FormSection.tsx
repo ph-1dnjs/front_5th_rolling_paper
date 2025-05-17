@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import './FormSection.css';
 
 interface FormSectionProps {
   label: string;
@@ -7,7 +6,7 @@ interface FormSectionProps {
 }
 
 const FormSection: React.FC<FormSectionProps> = ({ label, children }) => (
-  <div className='form-section'>
+  <div className='form-section flex flex-col w-full'>
     <label className='form-label'>{label}</label>
     {children}
   </div>

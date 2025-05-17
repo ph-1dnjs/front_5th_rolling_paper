@@ -14,18 +14,18 @@ const EmojiPanel = (props: EmojiPanelProps) => {
   return (
     <>
       {show && (
-        <div className='emoji-panel'>
-          <div className='emoji-header'>
+        <div className='emoji-panel bg-gray-100 p-4'>
+          <div className='emoji-header flex justify-between items-center mb-2'>
             <strong>이모지 선택</strong>
             <button onClick={onClose}>✕</button>
           </div>
-          <div className='emoji-grid'>
+          <div className='emoji-box grid'>
             {emojiList.map((src) => (
               <img
                 key={src}
                 src={src}
                 alt='이모지'
-                className='emoji-img'
+                className='emoji-img w-10 h-10 object-contain cursor-pointer rounded-md'
                 onClick={() => onClickEmoji(src)}
               />
             ))}

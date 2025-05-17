@@ -24,23 +24,26 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
   }, []);
 
   function handleClickEmoji(src: string) {
-    insertEmojiToSelection(src);
     editorRef.current?.focus();
+    insertEmojiToSelection(src);
   }
 
   return (
     <>
-      <div className='modal-header'>
-        <h2 className='modal-title'>프론트엔드 1팀에게 메시지 작성하기</h2>
-        <button className='modal-close' onClick={onClose}>
+      <div className='modal-header flex items-center justify-between pt-4 pl-6 pr-6 pb-4'>
+        <h2 className='modal-title flex items-center text-2xl leading-8'>
+          프론트엔드 1팀에게 메시지 작성하기
+        </h2>
+        <button className='modal-close absolute cursor-pointer' onClick={onClose}>
           ✕
         </button>
       </div>
 
-      <div className='modal-body'>
+      <div className='modal-body overflow-y-auto'>
         <FormRow>
           <FormSection label='받는 사람'>
             <input
+              className='w-full p-2 text-sm rounded-md h-10'
               value={values.receiver}
               onChange={(e) => setField('receiver', e.target.value)}
               placeholder='받는 사람의 이름'
@@ -49,6 +52,7 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
           </FormSection>
           <FormSection label='보내는 사람'>
             <input
+              className='w-full p-2 text-sm rounded-md h-10'
               value={values.sender}
               onChange={(e) => setField('sender', e.target.value)}
               placeholder='당신의 이름'
@@ -65,8 +69,7 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
           />
         </FormSection>
 
-        <FormRow style={{ justifyContent: 'flex-end' }}>
-          {/* TODO: 위치 조정 및 tailwind로 치환하기 */}
+        <FormRow className='justify-end'>
           <EmojiButton onToggle={() => setField('showEmojiList', !values.message)} />
 
           <EmojiPanel
@@ -80,15 +83,21 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
         <FormRow>
           <FormSection label='비밀번호 (4자리)'>
             <input
+              className='w-full p-2 text-sm rounded-md h-10'
               type='password'
               value={values.password}
               onChange={(e) => setField('password', e.target.value)}
               placeholder='4자리 숫자'
               maxLength={4}
             />
+            <p className='text-xs leading-4 text-gray-600 mt-2'>메시지 수정/삭제 시 필요합니다</p>
           </FormSection>
           <FormSection label='배경 색상'>
-            <select value={values.bgColor} onChange={(e) => setField('bgColor', e.target.value)}>
+            <select
+              className='w-full p-2 text-sm rounded-md h-10'
+              value={values.bgColor}
+              onChange={(e) => setField('bgColor', e.target.value)}
+            >
               <option value='white'>흰색</option>
               <option value='pink'>분홍</option>
               <option value='yellow'>노랑</option>
@@ -98,11 +107,14 @@ const CreatePostModalContent: React.FC<CreatePostModalContentProps> = ({ onClose
         </FormRow>
       </div>
 
-      <div className='modal-footer'>
-        {/* {error && <div className='error-message'>{error}</div>} */}
-        <div className='modal-actions'>
-          <button onClick={onClose}>취소</button>
-          <button onClick={validateAndSave}>메시지 저장하기</button>
+      <div className='modal-footer flex items-center justify-end'>
+        <div className='modal-actions flex justify-end'>
+          <button className='text-sm rounded-md cursor-pointer' onClick={onClose}>
+            취소
+          </button>
+          <button className='text-sm rounded-md cursor-pointer' onClick={validateAndSave}>
+            메시지 저장하기
+          </button>
         </div>
       </div>
     </>

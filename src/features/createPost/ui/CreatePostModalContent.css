@@ -1,78 +1,43 @@
-/* !! tailwind로 교체하면서 제거하기 */
-
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-}
-
 .modal-title {
-  display: flex;
-  align-items: center;
   gap: 8px;
-  font-size: 24px;
-  line-height: 32px;
   letter-spacing: -0.6px;
-
   .lucide-sparkles {
     color: var(--color-azure-61);
   }
 }
 
-.password-guide {
-  font-size: 12px;
-  line-height: 16px;
-  color: #6b7280;
-  margin-top: 8px;
-}
-
 .modal-close {
-  position: absolute;
   top: 17px;
   right: 17px;
-  cursor: pointer;
 }
 
 /* 본문 */
 .modal-body {
   padding: 0 24px 16px;
-  overflow-y: auto;
 }
+
 .form-section label {
   font-size: 18px;
   margin-bottom: 8px;
 }
 .form-section input,
 .form-section select {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 6px;
 }
 
 .modal-actions {
-  display: flex;
-  justify-content: flex-end;
   gap: 10px;
 }
 
 /* 푸터 */
 .modal-footer {
   padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   gap: 10px;
 }
 
 .modal-actions button {
   padding: 10px 16px;
-  font-size: 14px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
 }
 .modal-actions button:first-of-type {
   background: #ccc;

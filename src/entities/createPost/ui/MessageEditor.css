@@ -1,11 +1,4 @@
-/* !! tailwind로 교체하면서 제거하기 */
-
 .message-editor {
-  width: 100%;
-  padding: 10px;
   min-height: 200px;
-  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
 }

@@ -7,7 +7,7 @@ interface FormRowProps {
 }
 
 const FormRow: React.FC<FormRowProps> = ({ children, rest }) => (
-  <div className='form-row' {...rest}>
+  <div className='form-row flex mb-4' {...rest}>
     {children}
   </div>
 );

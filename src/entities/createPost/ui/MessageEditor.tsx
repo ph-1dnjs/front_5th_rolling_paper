@@ -10,7 +10,7 @@ interface MessageEditorProps {
 const MessageEditor = forwardRef<HTMLDivElement, MessageEditorProps>(({ value, onChange }, ref) => (
   <div
     ref={ref}
-    className='message-editor'
+    className='message-editor w-full p-2 text-sm rounded-md bg-white'
     contentEditable
     suppressContentEditableWarning
     onInput={(e) => onChange((e.target as HTMLDivElement).innerText)}
