@@ -37,10 +37,11 @@
 
 .modal-actions button {
   padding: 10px 16px;
+  border-radius: 10px;
   border: none;
 }
 .modal-actions button:first-of-type {
-  background: #ccc;
+  border: 1px solid #e2e8f0;
 }
 .modal-actions button:last-of-type {
   background: #4a90e2;

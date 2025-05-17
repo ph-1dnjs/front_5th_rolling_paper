@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export interface CreatePostFormValues {
   receiver: string;
@@ -20,6 +20,11 @@ export const useCreatePostForm = (onSave: (values: CreatePostFormValues) => void
     showEmojiList: false,
   });
   const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    if (error) alert(error);
+    setError('');
+  }, [error]);
 
   const setField = useCallback(
     <K extends keyof CreatePostFormValues>(field: K, value: CreatePostFormValues[K]) => {
